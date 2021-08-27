@@ -1,5 +1,4 @@
-
-# Movie review
+ # Movie review
 
 This is a backend api rest for movie review.
 
@@ -76,9 +75,9 @@ This is a backend api rest for movie review.
 
 
 
-## Installation
+# Installation
 
-Install my-project with npm
+## Installing with package managers
 
 ```bash
   clone the project and cd into project
@@ -92,3 +91,25 @@ Install my-project with npm
     1. Run `yarn install` command
     2. Setup database settings inside `ormconfig.json` file
     3. Run `yarn start` command
+
+
+
+## Installing with Docker
+
+### Set the following environment variables
+
+```bash
+  MYSQL_ROOT_PASSWORD
+  NODE_LOCAL_PORT
+  NODE_DOCKER_PORT
+```
+
+### Build and run
+
+There are two section : mysql and web.
+This command build, install mysql, and prepare all the application to run
+This command create an image to the app.
+
+```docker
+    docker-compose up
+```
