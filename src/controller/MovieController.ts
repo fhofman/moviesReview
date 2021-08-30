@@ -10,14 +10,14 @@ export class MovieController {
         const params = request.query;
         console.log(params)
         let movies = await this.movieRepository.createQueryBuilder('movie')
-        .orderBy("title", "ASC")
+        .orderBy(""+params.order, "ASC")
         .skip(+params.page==0?0:+params.page*+params.pageSize)
         .take(+params.pageSize)
         .getMany();
         if(params.filterByTitle){
             movies = await this.movieRepository.createQueryBuilder('movie')
-            .orderBy("title", "ASC")
             .where("title like :name", { name:`%${params.filterByTitle}%` })
+            .orderBy(params.order+"", "ASC")
             .skip(+params.page==0?0:+params.page*+params.pageSize)
             .take(+params.pageSize)
             .getMany();

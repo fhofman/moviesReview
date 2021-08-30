@@ -19,7 +19,7 @@ This is a backend api rest for movie review.
 | `pageSize`      | `number` |  movies per page |
 | `filterByTitle` | `string` |  Find searching complete or partial of the movie name |
 | `order` | `string` |  Order by this field |
-| `orderType` | `string` |  ASC \| DESC |
+
 
 #### Get movie
 
